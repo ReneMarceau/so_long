@@ -1,0 +1,195 @@
+!XPM42
+64 64 129 2 c
+   #000000FF
+.  #080806FF
+X  #04040AFF
+o  #08070CFF
+O  #0E0714FF
++  #0B0A12FF
+@  #140E1AFF
+#  #333335FF
+$  #39333EFF
+%  #3D244CFF
+&  #3E2A4DFF
+*  #3B3542FF
+=  #3B3946FF
+-  #3E3A49FF
+;  #3F2250FF
+:  #3E2D51FF
+>  #41254EFF
+,  #402B4FFF
+<  #413D4BFF
+1  #432651FF
+2  #422B52FF
+3  #492B56FF
+4  #4A2C59FF
+5  #453657FF
+6  #433E52FF
+7  #503761FF
+8  #543B65FF
+9  #573C69FF
+0  #593E69FF
+q  #45424FFF
+w  #454253FF
+e  #484151FF
+r  #474258FF
+t  #544F66FF
+y  #564168FF
+u  #5D436DFF
+i  #564E69FF
+p  #594D6CFF
+a  #555165FF
+s  #585266FF
+d  #575269FF
+f  #5A536BFF
+g  #5B5869FF
+h  #5F4270FF
+j  #5F4670FF
+k  #5F4B70FF
+l  #5B5070FF
+z  #5D5270FF
+x  #5B5571FF
+c  #5D5471FF
+v  #5F5472FF
+b  #5F5474FF
+n  #5F5272FF
+m  #60436FFF
+M  #60476FFF
+N  #614470FF
+B  #614671FF
+V  #614673FF
+C  #624772FF
+Z  #634873FF
+A  #644972FF
+S  #644B73FF
+D  #614D72FF
+F  #614C73FF
+G  #624C72FF
+H  #624E73FF
+J  #634A74FF
+K  #654874FF
+L  #664975FF
+P  #654876FF
+I  #634D74FF
+U  #664D75FF
+Y  #674E76FF
+T  #615072FF
+R  #605273FF
+E  #605573FF
+W  #615074FF
+Q  #625175FF
+!  #605275FF
+~  #605575FF
+^  #625475FF
+/  #625477FF
+(  #645677FF
+)  #625674FF
+_  #655876FF
+`  #726583FF
+'  #756488FF
+]  #7B678AFF
+[  #7B678CFF
+{  #7B668DFF
+}  #776E8DFF
+|  #786A8BFF
+ . #796A8BFF
+.. #78688CFF
+X. #79688CFF
+o. #79698DFF
+O. #7A698DFF
++. #7A688EFF
+@. #7B6A8EFF
+#. #7B6B8FFF
+$. #7C688DFF
+%. #7C6B8DFF
+&. #7D698EFF
+*. #7C6B8FFF
+=. #7B6C8DFF
+-. #796E8CFF
+;. #7B6D8EFF
+:. #7C6F8DFF
+>. #7D6C8EFF
+,. #7C6E8FFF
+<. #7A6C8DFF
+1. #79738FFF
+2. #7B728FFF
+3. #7E718FFF
+4. #79708DFF
+5. #7E6990FF
+6. #7C6A90FF
+7. #7F6A91FF
+8. #7D6C90FF
+9. #7D6D91FF
+0. #7D6F90FF
+q. #7E6F90FF
+w. #7F6D93FF
+e. #7F6E92FF
+r. #7D6F90FF
+t. #7F7091FF
+y. #7F7192FF
+u. #7C7293FF
+i. #827595FF
+& & > % > > > 1 > > % > > % & % & & % & % % % % % & % & % % % & % % % & % % % % & & % & % % & % % % % ; > % > > > 1 % > > > % , 
+% % & > > > 3 1 3 1 3 , > , & , & 2 2 , 2 , 2 , 2 & 2 , 2 , 2 , 2 , , , 2 , 2 , 2 & : , 2 , 2 2 5 & 2 : 2 4 1 3 3 1 > 3 % > % % 
+> > > & > > m L m m m m p M ] %.<.4.u.1.<.4.>.2.>.2.<.2.4.2.4.1.4.2.>.2.>.2.2.>.<.4.1.1.>.4.<.>.0.{ k u u u m m N h 1 % > > > , 
+% > % > 3 3 0 m N K L S G T %.3.1.1.1.1.u.4.1.1.4.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.4.u.1.1.y.@.! T U Y U L N N 3 > > > % > 
+> , ; 1 h 0 0 9 7 8 { @.%.| E T x x x x x x x x f x x x x x x x x x x x f x f x x x x x f x b f E ! @.<.<.$.8 5 9 8 0 m 1 % 3 ; 
+> > 1 3 0 h 8 8 8 u ' 0.i. .f t d f d d d f d f f d f f d d f d d d d f d f d d f f d d f d d d i b <.u.0.' u 8 8 8 h h 3 1 1 % 
+> 3 m h h 0 7 8 6.w.b b l d f f f f f f d x s s f f x f d f x d d d f f f f x g f f f f x d f f s f f l ~ T 0.5.8 8 9 0 N m 1 1 
+> > L N 8 7 9 0 6.9.l l d x i f f s f s s d f f s f d s g d d d g x f s f d f d f f s f s d f f f d f d f z 0.0.u 7 8 8 m L 1 ; 
+; 3 j Z 8 8 7.6.b l f d f d d d s f s f f s s f s p f d s p f d d d f f d f f s p M s s s f f f d d g a l l i ( i.] 8 8 G m 1 > 
+; 2 h j 9 y 6.0.b i x f d d d d s d s d s s s s s s s a s s s a a s s s a a s s s s s s a s s s g a g g d d f f i.] u 8 u G 1 1 
+% 1 y F 6...( z l f d d g a w w w w w w 6 w w w e e w w e e w w w w e w q w w w w w e e w w w w < 6 a a d f x x p T %.@.z u & & 
+; 2 j b 6.<.z f d x d a d t < < * * = = * - * * = = * = = - = = = = * = = = = * = = * * * = = * - w a a g d d d p p >.>.! u ; & 
+& : ..u.z i p d s a g s < < < = X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X < = w w a d d d d d f ! 0.<.& & 
+: 5 ' u.b i g f s a a a w w = = X                                           X               X   $ = w < a a d g f x k ! y...5 & 
+>.` ) f f d a a a g e < < * + o X                                                             X X @ * = w w d d d t f f d _ ` } 
+i.<.f d g d g a a a < * < $ o X                                                                   + $ < = < a d f f s d i b 4.u.
+u.<.E f d s s s r - w = .   o                                                                     o X X = q < r d s d f f b 4.u.
+u.} f f d f f f - < - # .                                                                               # - < - d f d f s f u.u.
+u.} b d f s d d r = + X                                                                         X         + = r d f d s d f 1.u.
+u.} b d d d l d 6 = X         X                                                                         X X - 6 d d d s d f 1.u.
+u.<.b d d d f f 6 - + X                                                                                 X + - 6 d f d s f z 3.2.
+u.4.f f g d f d r = X X                                                                                   X - r d s s s f f 4.2.
+u.} f f d d f d 6 = +         X                                                                 X         + - 6 d f s s g f 4.u.
+u.} x f d f f d w - +   .                                                                           .     + - 6 d s f s s f 4.u.
+u.} b f f d f d w - + X       X                                                                           o - 6 d f s s d f u.u.
+u.} b d s d f f - - X                                                                           X         o - < d s d g s f 4.u.
+u.<.f f d d d f 6 - X X                                                                                   o - 6 d f d s f f 4.u.
+u.<.f f d d x d 6 - X         X                                                                           o = 6 d s d s s g 4.u.
+u.} f f d f f d 6 - X                                                                                     + - 6 d s s s f g 2.i.
+u.} b f s s f s 6 - X                                                                                     X * w d f s s s z  .2.
+u.} b d s s x d 6 - o X                                                                                   + - 6 d s d s g f 4.u.
+u.} b d s f d d 5 - o X       X                                                                           X - w d f s s s f 4.u.
+y.4.f f f s d d 6 - X         X                                                                           o - 6 a d d s f f 4.u.
+u.4.) f d s s d < < X                                                                                     o - 6 d f d d f z 4.u.
+u.} c s g d g d 6 < X                                                                                     o - 6 d f d f f f 4.u.
+u.} c s d d d d 6 - o                                                                                     o - 6 d f d d f f 4.u.
+u.} x d f s f d 6 < X         X                                                                 X         + - < d x f s f f 4.u.
+u.} E d s s f d 6 - X                                                                                     X - 6 d f d f f T 4.u.
+u.1.f f f s d d 6 < X         X                                                                           X - 6 d d s f f f 4.u.
+u. .T f s s d d < - X                                                                                     + - < d f s f f f 4.3.
+u.} z f s s s s 6 - X                                                                                     o = 6 d d d d f b 1.u.
+u.} z f s s f f < - X                                                                                     o = 6 d x d f s x 4.4.
+u.} z f d d d d 6 < X         X                                                                 X         o - 6 d l d d f f 4.u.
+u.} f d s g s d 6 < X                                                                                     o - 6 t d d f f f 4.u.
+u.4.b f s g d d 6 - X                                                                                     + = 6 d x d f f T 4.u.
+u.4.f s f d d d < - X                                                                                     X - < d f d f f f 4.3.
+u.} c s d s s d 6 < X         X                                                                           + = 6 d f s f f f 4.u.
+u.} c s d g f d 6 < X                                                                           X         o = 6 d d s s f f 4.u.
+u.} b d d s d d w - X                                                                                     o - 6 a f d f d b 4.y.
+u.} E d g d s d w - X                                                                                     o - 6 d f d d f f 1.u.
+y.} f f d s s d 6 - X       X                                                                             o - 6 d f d f f f 4.u.
+u.4.T f d g f d 6 - X                                                                                     o - 6 i d d f f f 4.4.
+u.} z g s s d d 6 - X                                                                           X         + - < d f s f f T 4.u.
+u.} z f s s f d < < X                                                                                     X - 6 d x f s f f 4.u.
+u.} b d s s f d w - X       X                                                                             X - 6 d d d s f f 4.u.
+u.} f d f s s d 6 - o                                                                                     + - < d d s f f f 4.u.
+u.4.z f s d f s 6 - X                                                                                     o - 6 d l d d f b 4.u.
+u.4.v f d d f d 6 - X                                                                                     X - 6 d f d f d f 4.u.
+u.} f s s g s d 6 - X       X                                                                   X         o - 6 d x d f f f 4.u.
+u.} b s d d f d 6 - X                                                                                     o - 6 d d d d f s 4.u.
+u.} b s d s s f < - X                                                                                     o - 6 d f f s f z 2.y.
+u.} f d d s s s 6 < X                                                                                     X - < d x s s f f 4.u.
+u.4.E d d g d a 6 < o       X                                                                             + = 6 d d d f f f 4.u.
+u. .z f f d d s 6 - o                                                                           X         o - 6 d l d d f f 4.u.
