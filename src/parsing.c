@@ -14,23 +14,24 @@
 
 static int count_line(char *mapfile)
 {
-    int fd;
-    char c;
     int readbytes;
     int count;
+    int fd;
+    char c;
     
-    count = 0;
     fd = open(mapfile, O_RDONLY);
+    count = 0;
     while (1)
     {
         readbytes = read(fd, &c, 1);
-        if (readbytes == 0)
-            break;
         if (readbytes < 0)
-   
+        {
+            close(fd);
             return (-1);
-             
-        if (c == '\n')
+        }
+        else if (readbytes == 0)
+            break;
+        else if (c == '\n')
             count++;
     }
     count++;
@@ -40,17 +41,18 @@ static int count_line(char *mapfile)
 
 char    **pars_tacus(char *mapfile)
 {
-    char    **map;
-    int fd;
-    int i;
+    char	**map;
+    int 	fd;
+	int		maplen;
+    int 	i;
 
-    fd = open(mapfile, O_RDONLY);
-    map = ft_calloc(count_line(mapfile), sizeof(char *));
+	maplen = count_line(mapfile);
+    map = ft_calloc(maplen, sizeof(char *));
     if (!map)
         return(NULL);
-    
+    fd = open(mapfile, O_RDONLY);
     i = 0;
-    while (i <= count_line(mapfile))
+    while (i <= maplen)
     {
        map[i] = get_next_line(fd);
        i++;
@@ -59,4 +61,3 @@ char    **pars_tacus(char *mapfile)
     close(fd);
     return (map);
 }
-

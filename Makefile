@@ -40,14 +40,14 @@ BOLD	= \033[1m
 RESET	= \033[0m
 MAGENTA	=\033[0;95m
 
-all: ${LIBFT_LIB} ${MLX_LIB} ${NAME}
-
-${LIBFT_LIB}:
-	@make -C ${LIBFT_PATH}
+all: ${MLX_LIB} ${LIBFT_LIB} ${NAME}
 
 ${MLX_LIB}:
 	@cd MLX42 && cmake -B build
 	@cmake --build ${MLX_PATH} -j4
+
+${LIBFT_LIB}:
+	@make -C ${LIBFT_PATH}
 
 ${OBJS_DIR}/%.o: ${SRCS_DIR}/%.c
 	@mkdir -p ${@D}

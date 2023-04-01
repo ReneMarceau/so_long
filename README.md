@@ -6,14 +6,14 @@
 
 ## Base de game
 
-- [x] Créer la structure de la game ***<sup>rmarceau</sup>***
-- [ ] Set toutes les valeurs par défauts de la structure 
-- [ ] Initialisation du jeu avec `mlx_init()`
+- [x] Créer la structure de la game 
+- [x] Set toutes les valeurs par défauts de la structure 
+- [x] Initialisation du jeu avec `mlx_init()`
 
 ## Ouverture de fichier
 
-- [ ] Lecture de map avec `open, get_next_line, close` ***<sup>klaksi</sup>***
-- [ ] Parsing de la map dans une matrice
+- [x] Lecture de map avec `open, get_next_line, close` ***<sup>klaksi</sup>***
+- [x] Parsing de la map dans une matrice
 
 ## XPM
 
@@ -38,7 +38,7 @@
 
 ## Render
 
-- [ ] Calculer la taille de la window et la display en fonction
+- [ ] Calculer la taille de la window et la display en fonction ***<sup>rmarceau</sup>***
 - [ ] Analyser la map parsée et afficher en fonction de l'élement `mlx_image_to_window()`
 
 ## Interaction avec le clavier
@@ -63,9 +63,12 @@
 
 ### Git
 
+#### Avant de bosser
 - git pull
 
 - git checkout -b "NomDeLaBranch"
+
+#### Après avoir bosser
 
 - git add .
 
@@ -73,7 +76,9 @@
 
 - git push
 
-- git branch main
+- `pull request sur github`
+
+- git checkout main
 
 - git pull
 
@@ -81,7 +86,7 @@
 
 ### Leaks
 
-Pour check les leaks `leaks --atExit -- so_long` ou `valgrind --leak-check=full so_long "args"`
+Pour check les leaks `leaks --atExit -- so_long "map"`
 
 ### Debug
 
@@ -92,5 +97,3 @@ Pour check les leaks `leaks --atExit -- so_long` ou `valgrind --leak-check=full 
 - run
 
 - gui
-
-
