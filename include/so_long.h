@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/01 13:15:10 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:17:02 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,23 @@
 
 # include <fcntl.h>
 
+typedef enum mlx_images
+{
+	PLAYER,
+	COLLECTIBLE,
+	DOOR_OPEN,
+	DOOR_CLOSE,
+	WALL,
+	FLOOR,
+	IMG_COUNTER
+}	t_mlx_images;
+
 typedef struct s_game
 {
-	mlx_t	*mlx;
-	char	**map;
+	mlx_t		*mlx;
+	xpm_t		*xpm[IMG_COUNTER];
+	mlx_image_t	*img[IMG_COUNTER];
+	char		**map;
 }	t_game;
 
 void	build(t_game *game);
