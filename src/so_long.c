@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:48:12 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/01 13:19:41 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:39:34 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int	main(int argc, char **argv)
 	
 	if (argc == 2)
 	{
-		build(&game);
-		game.map = pars_tacus(argv[1]);
+		build(&game, argv);
 		ft_display_map(game.map);
 	}
 	else

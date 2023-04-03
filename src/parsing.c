@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:56:57 by klaksi            #+#    #+#             */
-/*   Updated: 2023/03/31 18:43:54 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/03 16:40:15 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ char    **pars_tacus(char *mapfile)
        map[i] = get_next_line(fd);
        i++;
     }
-
     close(fd);
     return (map);
 }
