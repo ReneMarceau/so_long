@@ -6,7 +6,7 @@
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/04 13:35:15 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/04 17:27:56 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char    **pars_tacus(char *mapfile);
 void    loadxpm(t_game *game);
 void    texture_to_img(t_game *game);
 void	render_window(t_game *game);
+void    keyhook(mlx_key_data_t keydata, void *param);
 
 #endif
