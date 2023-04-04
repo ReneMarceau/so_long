@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:48:12 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/03 16:39:34 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:06:16 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 	{
 		build(&game, argv);
 		ft_display_map(game.map);
+		mlx_loop(game.mlx);
 	}
 	else
 		ft_printf("ERROR\n");

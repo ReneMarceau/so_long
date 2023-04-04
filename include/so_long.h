@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/03 16:39:14 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:35:15 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 
 typedef enum mlx_images
 {
-	PLAYER,
-	COLLECTIBLE,
-	DOOR_OPEN,
-	DOOR_CLOSE,
-	WALL,
-	FLOOR,
+	P,
+	C,
+	DO,
+	DC,
+	W,
+	F,
 	IMG_COUNTER
 }	t_mlx_images;
 
@@ -40,11 +40,12 @@ typedef struct s_game
 	char		**map;
 	int			width;
 	int			height;
-	int			x;
-	int			y;
 }	t_game;
 
-void	build(t_game *game, char **argv)
+void	build(t_game *game, char **argv);
 char    **pars_tacus(char *mapfile);
+void    loadxpm(t_game *game);
+void    texture_to_img(t_game *game);
+void	render_window(t_game *game);
 
 #endif
