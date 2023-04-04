@@ -6,7 +6,7 @@
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/04 17:27:56 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/04 18:33:40 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,24 @@ typedef enum mlx_images
 	IMG_COUNTER
 }	t_mlx_images;
 
+typedef struct s_player
+{
+	int	width;
+	int	height;
+	int	x;
+	int	y;
+}	t_player;
+
 typedef struct s_game
 {
 	mlx_t		*mlx;
 	xpm_t		*xpm[IMG_COUNTER];
 	mlx_image_t	*img[IMG_COUNTER];
+	t_player	player;
 	char		**map;
 	int			width;
 	int			height;
+	
 }	t_game;
 
 void	build(t_game *game, char **argv);

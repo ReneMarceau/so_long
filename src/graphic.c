@@ -6,7 +6,7 @@
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:42:05 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/04 14:34:14 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/04 19:09:13 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ void	render_window(t_game *game)
 		{
 			if (game->map[y][x] == 'P')
 			{
-				mlx_image_to_window(game->mlx, game->img[F], game->width, game->height);
-				mlx_image_to_window(game->mlx, game->img[P], game->width, game->height);
+				game->player.x = x;
+				game->player.y = y;
+				game->player.width = game->width;
+				game->player.height = game->height;
 			}
 			else if (game->map[y][x] == 'E')
 				mlx_image_to_window(game->mlx, game->img[DC], game->width, game->height);
@@ -63,6 +65,6 @@ void	render_window(t_game *game)
 		y++;
 		game->height += 64;
 	}
-	
-
+	mlx_image_to_window(game->mlx, game->img[F], game->player.width, game->player.height);
+	mlx_image_to_window(game->mlx, game->img[P], game->player.width, game->player.height);
 }
