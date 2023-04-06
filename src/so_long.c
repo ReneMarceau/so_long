@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:48:12 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/04 17:18:59 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/06 17:52:44 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	ft_display_map(char **map)
+static void	ft_display_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map[i])
@@ -33,10 +33,14 @@ int	main(int argc, char **argv)
 	{
 		build(&game, argv);
 		ft_display_map(game.map);
+		mlx_close_hook(game.mlx, (mlx_closefunc)&end_success, &game);
 		mlx_key_hook(game.mlx, &keyhook, &game);
 		mlx_loop(game.mlx);
 	}
 	else
-		ft_printf("ERROR\n");
-	return (0);
+	{
+		ft_putendl_fd(ERROR_ARGS, 2);
+		return (EXIT_FAILURE);
+	}
+	return (end_success(&game));
 }

@@ -12,23 +12,23 @@
 
 ## Ouverture de fichier
 
-- [x] Lecture de map avec `open, get_next_line, close` ***<sup>klaksi</sup>***
+- [x] Lecture de map avec `open, get_next_line, close`
 - [x] Parsing de la map dans une matrice
 
 ## XPM
 
-- [ ] Télecharger les sprites en PNG
+- [ ] Télecharger les sprites en PNG ***<sup>klaksi</sup>***
 - [ ] Redimensionner les PNG à la bonne dimension
 - [ ] Convertir PNG en `XPM`
 - [ ] Convertir XPM en `XPM42`
-- [ ] Load tous les différents XPM avec `mlx_load_xpm42`
-- [ ] Changer toutes les textures(XPM) en images avec `mlx_texture_to_image`
+- [x] Load tous les différents XPM avec `mlx_load_xpm42`
+- [x] Changer toutes les textures(XPM) en images avec `mlx_texture_to_image`
 
 ## Erreurs
 
-- [ ] Écrire les différents messages d'érreurs
-- [ ] Nombre d'arguments `argc`
-- [ ] Vérifier si le fichier existe et l'extention du fichier est bonne `.ber`
+- [x] Écrire les différents messages d'érreurs
+- [x] Nombre d'arguments `argc`
+- [x] Vérifier si le fichier existe et l'extention du fichier est bonne `.ber`
 - [ ] Map est rectangulaire
 - [ ] La map est entourée uniquement de murs
 - [ ] Vérifier que tous les espaces vides sont remplie de `0`
@@ -38,13 +38,13 @@
 
 ## Render
 
-- [ ] Calculer la taille de la window et la display en fonction ***<sup>rmarceau</sup>***
-- [ ] Analyser la map parsée et afficher en fonction de l'élement `mlx_image_to_window()`
+- [x] Calculer la taille de la window et la display en fonction ***<sup>rmarceau</sup>***
+- [x] Analyser la map parsée et afficher en fonction de l'élement `mlx_image_to_window()`
 
 ## Interaction avec le clavier
 
-- [ ] Implementer les fonctions nécessaire pour les hooks des différents touches `mlx_key_hook()`
-- [ ] Permettre le personnage à bouger ou pas en fonctions des obstacles autour de lui (Chaque mouvements doient être compter)
+- [x] Implementer les fonctions nécessaire pour les hooks des différents touches `mlx_key_hook()`
+- [x] Permettre le personnage à bouger ou pas en fonctions des obstacles autour de lui (Chaque mouvements doient être compter)
 - [ ] Ouvrir la porte après que tous les collectibles ont été collecter
 
 ## Fonction d'exit

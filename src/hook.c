@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:14:57 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/04 19:12:07 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/06 18:14:51 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,41 @@ void    keyhook(mlx_key_data_t keydata, void *param)
     t_game  *game;
 	
 	game = param;
-	if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_RELEASE)
+	{
+		end_success(game);
+		exit(EXIT_SUCCESS);
+	}
+	else if ((keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_UP) && keydata.action == MLX_PRESS)
+	{
 		if(game->map[game->player.y - 1][game->player.x] != '1')
 		{
-			game->img[P]->instances[0].y -= 64;
+			game->img[PLAYER]->instances[0].y -= IMG_SIZE;
 			game->player.y = game->player.y - 1;
 		}
-	if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
-		
+	}
+	else if ((keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_DOWN) && keydata.action == MLX_PRESS)
+	{
 		if(game->map[game->player.y + 1][game->player.x] != '1')
 		{
-			game->img[P]->instances[0].y += 64;
+			game->img[PLAYER]->instances[0].y += IMG_SIZE;
 			game->player.y = game->player.y + 1;
 		}
-		
-	if (keydata.key == MLX_KEY_D && keydata.action == MLX_PRESS)
-		
+	}
+	else if ((keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT) && keydata.action == MLX_PRESS)
+	{
 		if(game->map[game->player.y][game->player.x + 1] != '1')
 		{
-			game->img[P]->instances[0].x += 64;
+			game->img[PLAYER]->instances[0].x += IMG_SIZE;
 			game->player.x = game->player.x + 1;
 		}
-	if (keydata.key == MLX_KEY_A && keydata.action == MLX_PRESS)
-		
-			if(game->map[game->player.y][game->player.x - 1] != '1')
+	}
+	else if ((keydata.key == MLX_KEY_A || keydata.key == MLX_KEY_LEFT) && keydata.action == MLX_PRESS)
+	{
+		if(game->map[game->player.y][game->player.x - 1] != '1')
 		{
-			game->img[P]->instances[0].x -= 64;
+			game->img[PLAYER]->instances[0].x -= IMG_SIZE;
 			game->player.x = game->player.x - 1;
 		}
+	}
 }

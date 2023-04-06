@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   build.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:11:52 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/04 18:54:49 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/06 19:06:27 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-#define WIDTH 1280
-#define HEIGHT 720
 
 static void	init(t_game *game)
 {
@@ -24,14 +21,16 @@ static void	init(t_game *game)
 void	build(t_game *game, char **argv)
 {
 	init(game);
-;	game->map = pars_tacus(argv[1]);
-	game->mlx = mlx_init(WIDTH, HEIGHT, "kamélia la bg", false);
-	if (!game->mlx)
+	game->map = pars_tacus(argv[1]);
+	if (!game->map)
 	{
-		ft_putendl_fd("Error\nmlx_init failed", 2);
-		exit(2);
+		ft_putendl_fd(ERROR_PARSING, 2);
+		exit(EXIT_FAILURE);
 	}
-	loadxpm(game);
+	game->mlx = mlx_init(get_winsize(game->map, WIDTH), get_winsize(game->map, HEIGHT), "René le bg", false);
+	if (!game->mlx)
+		end_failure(game, ERROR_MLX);
+	load_xpm(game);
 	texture_to_img(game);
 	render_window(game);
 }
