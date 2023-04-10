@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/06 19:06:17 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:54:13 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ typedef struct s_coord
 	int	height;
 }	t_coord;
 
+typedef struct s_count
+{
+	int	player_num;
+	int	exit_num;
+	int	item_num;
+}	t_count;
+
 typedef struct s_game
 {
 	mlx_t		*mlx;
@@ -58,13 +65,14 @@ typedef struct s_game
 	t_coord		player;
 	t_coord		exit;
 	char		**map;
+	t_count		element;
 	// Useless?
 	int			width;
 	int			height;
-	
 }	t_game;
 
 // Initialisation
+void	init(t_game *game);
 void	build(t_game *game, char **argv);
 char    **pars_tacus(char *mapfile);
 void    load_xpm(t_game *game);
@@ -79,5 +87,9 @@ void    keyhook(mlx_key_data_t keydata, void *param);
 int	    end_success(t_game *game);
 void	end_failure(t_game *game, char *error_message);
 void    free_map(char **map);
+
+//Error
+int check_element(char **map);
+int	check_element_number(t_game *game);
 
 #endif

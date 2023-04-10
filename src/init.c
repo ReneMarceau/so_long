@@ -6,11 +6,18 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:19:46 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/06 18:30:34 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:32:50 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	init(t_game *game)
+{
+    game->element.player_num = 0;
+    game->element.exit_num = 0;
+    game->element.item_num = 0;
+}
 
 int get_winsize(char **map, int flag)
 {

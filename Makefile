@@ -6,7 +6,7 @@
 #    By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/17 16:24:41 by rmarceau          #+#    #+#              #
-#    Updated: 2023/04/06 19:06:21 by rmarceau         ###   ########.fr        #
+#    Updated: 2023/04/10 11:48:45 by rmarceau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INC_DIR = include
 SRCS_DIR = src
 OBJS_DIR = objs
 
-SRCS = so_long.c parsing.c build.c graphic.c hook.c free.c init.c
+SRCS = so_long.c parsing.c build.c graphic.c hook.c free.c init.c error.c
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 

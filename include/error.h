@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:35:53 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/06 17:03:54 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:49:22 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define ERROR_FILE         "Error\nMap file not found or invalid file extension (must be .ber)"
 # define ERROR_PARSING      "Error\nMap parsing failed"
 # define ERROR_ELEMENT      "Error\nElement in map is invalid"
+# define ERROR_ELEMENT_NUM  "Error\nThe map must have exactly 1 player, 1 exit and at least 1 collectible"
 # define ERROR_PLAYER 		"Error\nMap must have exactly 1 player"
 # define ERROR_EXIT 		"Error\nMap must have exactly 1 exit"
 # define ERROR_ITEM 		"Error\nMap must have at least 1 collectible"
