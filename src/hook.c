@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:14:57 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/06 18:14:51 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:45:29 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ void    keyhook(mlx_key_data_t keydata, void *param)
 	
 	game = param;
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_RELEASE)
-	{
 		end_success(game);
-		exit(EXIT_SUCCESS);
-	}
 	else if ((keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_UP) && keydata.action == MLX_PRESS)
 	{
 		if(game->map[game->player.y - 1][game->player.x] != '1')

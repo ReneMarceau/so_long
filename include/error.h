@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:35:53 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/10 12:49:22 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:16:27 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 # define ERROR_EXIT 		"Error\nMap must have exactly 1 exit"
 # define ERROR_ITEM 		"Error\nMap must have at least 1 collectible"
 # define ERROR_MAP_CLOSED   "Error\nMap is not closed"
-# define ERROR_RECTANGLE 	"Error\nMap is not a rectangle"
+# define ERROR_RECTANGLE 	"Error\nMap is not a rectangle or is not surrounded by walls"
+# define ERROR_NEWLINE 		"Error\nMap must not be empty or have empty lines"
 # define ERROR_PATH 		"Error\nNo valid path to finish the game"
 # define ERROR_XPM 			"Error\nXPM load failed"
 # define ERROR_IMG 			"Error\nImage creation failed"

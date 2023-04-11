@@ -6,13 +6,13 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:56:57 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/06 15:52:23 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:19:38 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static int count_line(char *mapfile)
+int count_line(char *mapfile)
 {
     int readbytes;
     int count;
@@ -48,7 +48,7 @@ char    **pars_tacus(char *mapfile)
     int 	i;
 
 	maplen = count_line(mapfile);
-    map = (char **)ft_calloc(maplen, sizeof(char *));
+    map = (char **)ft_calloc(maplen + 1, sizeof(char *));
     if (!map)
     {
         ft_putendl_fd(ERROR_MALLOC, 2);

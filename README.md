@@ -28,12 +28,12 @@
 
 - [x] Écrire les différents messages d'érreurs
 - [x] Nombre d'arguments `argc`
-- [x] Vérifier si le fichier existe et l'extention du fichier est bonne `.ber`
-- [ ] Map est rectangulaire
-- [ ] La map est entourée uniquement de murs
-- [ ] Vérifier que tous les espaces vides sont remplie de `0`
-- [ ] Tous les caractères sont correctes
-- [ ] Vérifier qu'il y a au moins 1 collectible et uniquement 1 joueur et 1 sortie
+- [ ] Vérifier si le fichier existe et l'extention du fichier est bonne `.ber`
+- [x] Map est rectangulaire
+- [x] La map est entourée uniquement de murs
+- [x] Vérifier que tous les espaces vides sont remplie de `0`
+- [x] Tous les caractères sont correctes
+- [x] Vérifier qu'il y a au moins 1 collectible et uniquement 1 joueur et 1 sortie
 - [ ] Checker si il y a un chemin valide (il est possible de terminer la carte)
 
 ## Render
@@ -49,10 +49,11 @@
 
 ## Fonction d'exit
 
-- [ ] sprites : `mlx_destroy_image()`
-- [ ] Windows : `mlx_destroy_window()`
-- [ ] mlx : `mlx_destroy_display() + free()`
-- [ ] Puis bien tout `free()` `valgrind`
+- [x] sprites : `mlx_destroy_image()`
+- [x] Windows : `mlx_destroy_window()`
+- [x] mlx : `mlx_destroy_display() + free()`
+- [x] Puis bien tout `free()` `valgrind`
+- [x] Bien free la map quand la croix est press
 
 
 ## Bonus
@@ -86,13 +87,13 @@
 
 ### Leaks
 
-Pour check les leaks `leaks --atExit -- so_long "map"`
+Pour check les leaks `leaks --atExit -- ./so_long maps/basic.ber`
 
 ### Debug
 
 - lldb so_long "map"
-- b main
 
+- b main
 
 - run
 

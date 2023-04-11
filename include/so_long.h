@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/10 12:54:13 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:50:24 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@
 # include "../MLX42/include/MLX42/MLX42.h"
 # include "./error.h"
 
-# include <stdio.h>
 # include <fcntl.h>
 
 # define IMG_SIZE 64
-# define WIDTH 0
-# define HEIGHT 1
 
 # define PLAYER_PATH "./sprites/player.xpm42"
 # define ITEM_PATH "./sprites/item.xpm42"
@@ -65,20 +62,19 @@ typedef struct s_game
 	t_coord		player;
 	t_coord		exit;
 	char		**map;
-	t_count		element;
-	// Useless?
 	int			width;
 	int			height;
+	t_count		element;
 }	t_game;
 
 // Initialisation
 void	init(t_game *game);
 void	build(t_game *game, char **argv);
+int 	count_line(char *mapfile);
 char    **pars_tacus(char *mapfile);
 void    load_xpm(t_game *game);
 void    texture_to_img(t_game *game);
 void	render_window(t_game *game);
-int 	get_winsize(char **map, int flag);
 
 // Keyhook
 void    keyhook(mlx_key_data_t keydata, void *param);
@@ -86,10 +82,11 @@ void    keyhook(mlx_key_data_t keydata, void *param);
 // Free
 int	    end_success(t_game *game);
 void	end_failure(t_game *game, char *error_message);
-void    free_map(char **map);
 
 //Error
 int check_element(char **map);
 int	check_element_number(t_game *game);
+int is_map_width(t_game *game);
+int is_map_height(t_game *game);
 
 #endif
