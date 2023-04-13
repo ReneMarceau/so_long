@@ -3,35 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   build.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:11:52 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/04 18:54:49 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/13 13:09:35 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-#define WIDTH 1280
-#define HEIGHT 720
-
-static void	init(t_game *game)
-{
-	game->width = 0;
-	game->height = 0;
-}
-
 void	build(t_game *game, char **argv)
 {
 	init(game);
-;	game->map = pars_tacus(argv[1]);
-	game->mlx = mlx_init(WIDTH, HEIGHT, "kamélia la bg", false);
+	game->height = count_line(argv[1]);
+	game->map = pars_tacus(argv[1]);
+	game->mapcopy = copymap(game->map);
+	if (!game->map || !game->mapcopy)
+		end_failure(game, ERROR_PARSING);
+	if (!game->map[game->height - 1])
+		end_failure(game, ERROR_NEWLINE);
+	if (!is_map_width(game) || !is_map_height(game))
+		end_failure(game, ERROR_RECTANGLE);
+	if (!check_element(game->map))
+		end_failure(game, ERROR_ELEMENT);
+	if (!get_coordinate(game, 'P'))
+		end_failure(game, ERROR_PLAYER);
+	if (!get_coordinate(game, 'E'))
+		end_failure(game, ERROR_EXIT);
+	if (!get_collectible_num(game))
+		end_failure(game, ERROR_ITEM);
+	if (!verify_path(game, game->player.y, game->player.x))
+		end_failure(game, ERROR_PATH);
+	game->mlx = mlx_init(game->width * IMG_SIZE, game->height * IMG_SIZE, "René le bg", false);
 	if (!game->mlx)
-	{
-		ft_putendl_fd("Error\nmlx_init failed", 2);
-		exit(2);
-	}
-	loadxpm(game);
+		end_failure(game, ERROR_MLX);
+	load_xpm(game);
 	texture_to_img(game);
 	render_window(game);
 }

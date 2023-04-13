@@ -6,13 +6,13 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:56:57 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/03 16:40:15 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:19:38 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static int count_line(char *mapfile)
+int count_line(char *mapfile)
 {
     int readbytes;
     int count;
@@ -26,8 +26,9 @@ static int count_line(char *mapfile)
         readbytes = read(fd, &c, 1);
         if (readbytes < 0)
         {
+            ft_putendl_fd(ERROR_FILE, 2);
             close(fd);
-            return (-1);
+            exit(EXIT_FAILURE);
         }
         else if (readbytes == 0)
             break;
@@ -42,21 +43,21 @@ static int count_line(char *mapfile)
 char    **pars_tacus(char *mapfile)
 {
     char	**map;
-    int 	fd;
 	int		maplen;
+    int 	fd;
     int 	i;
 
 	maplen = count_line(mapfile);
-    map = ft_calloc(maplen, sizeof(char *));
+    map = (char **)ft_calloc(maplen + 1, sizeof(char *));
     if (!map)
-        return(NULL);
+    {
+        ft_putendl_fd(ERROR_MALLOC, 2);
+        exit(EXIT_FAILURE);
+    }
     fd = open(mapfile, O_RDONLY);
     i = 0;
     while (i <= maplen)
-    {
-       map[i] = get_next_line(fd);
-       i++;
-    }
+       map[i++] = get_next_line(fd);
     close(fd);
     return (map);
 }
