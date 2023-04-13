@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:47:14 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/11 17:55:09 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:08:06 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@ static void	free_map(t_game *game)
 
     i = 0;
     while (i < game->height)
-        free(game->map[i++]);
+    {
+        free(game->mapcopy[i]);
+        free(game->map[i]);
+        i++;
+    }
+    free(game->mapcopy);
     free(game->map);
 }
 

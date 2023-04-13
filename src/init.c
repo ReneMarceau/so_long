@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:19:46 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/11 16:50:57 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:21:45 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,58 @@ void	init(t_game *game)
     game->mlx = NULL;
     game->width = 0;
     game->height = 0;
-    game->element.player_num = 0;
-    game->element.exit_num = 0;
-    game->element.item_num = 0;
+    game->item_collected = 0;
+    game->item_max = 0;
+}
+
+int get_collectible_num(t_game *game)
+{
+    int i;
+    int j;
+
+    i = -1;
+    while (game->map[++i])
+    {
+        j = -1;
+        while (game->map[i][++j])
+        {
+            if (game->map[i][j] == 'C')
+                game->item_max++;
+        }
+    }
+    if (game->item_max < 1)
+        return (0);
+    return (1);
+}
+
+int get_coordinate(t_game *game, char element)
+{
+    int i;
+    int j;
+
+    i = -1;
+    while (game->map[++i])
+    {
+        j = -1;
+        while (game->map[i][++j])
+        {
+            if (game->map[i][j] == element)
+            {
+                if (element == 'P')
+                {
+                    game->player.x = j;
+                    game->player.y = i;
+                }
+                else if (element == 'E')
+                {
+                    game->exit.x = j;
+                    game->exit.y = i;
+                }
+                return (1);
+            }
+        }
+    }
+    return (0);
 }
 
 int is_map_width(t_game *game)

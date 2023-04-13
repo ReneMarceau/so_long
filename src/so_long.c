@@ -6,13 +6,13 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:48:12 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/11 17:51:23 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:24:44 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-static void	ft_display_map(char **map)
+void	ft_display_map(char **map)
 {
 	int	i;
 
@@ -33,6 +33,9 @@ int	main(int argc, char **argv)
 	{
 		build(&game, argv);
 		ft_display_map(game.map);
+		ft_printf("Original\n\n");
+		ft_display_map(game.mapcopy);
+		ft_printf("Copy\n\n");
 		mlx_key_hook(game.mlx, &keyhook, &game);
 		mlx_close_hook(game.mlx, (mlx_closefunc)&end_success, &game);
 		mlx_loop(game.mlx);

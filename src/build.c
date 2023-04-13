@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:11:52 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/11 16:01:36 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/13 13:09:35 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	build(t_game *game, char **argv)
 	init(game);
 	game->height = count_line(argv[1]);
 	game->map = pars_tacus(argv[1]);
-	if (!game->map)
+	game->mapcopy = copymap(game->map);
+	if (!game->map || !game->mapcopy)
 		end_failure(game, ERROR_PARSING);
 	if (!game->map[game->height - 1])
 		end_failure(game, ERROR_NEWLINE);
@@ -25,8 +26,14 @@ void	build(t_game *game, char **argv)
 		end_failure(game, ERROR_RECTANGLE);
 	if (!check_element(game->map))
 		end_failure(game, ERROR_ELEMENT);
-	if (!check_element_number(game))
-		end_failure(game, ERROR_ELEMENT_NUM);
+	if (!get_coordinate(game, 'P'))
+		end_failure(game, ERROR_PLAYER);
+	if (!get_coordinate(game, 'E'))
+		end_failure(game, ERROR_EXIT);
+	if (!get_collectible_num(game))
+		end_failure(game, ERROR_ITEM);
+	if (!verify_path(game, game->player.y, game->player.x))
+		end_failure(game, ERROR_PATH);
 	game->mlx = mlx_init(game->width * IMG_SIZE, game->height * IMG_SIZE, "René le bg", false);
 	if (!game->mlx)
 		end_failure(game, ERROR_MLX);

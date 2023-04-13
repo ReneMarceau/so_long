@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/11 17:50:24 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:22:48 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,6 @@ typedef struct s_coord
 	int	height;
 }	t_coord;
 
-typedef struct s_count
-{
-	int	player_num;
-	int	exit_num;
-	int	item_num;
-}	t_count;
-
 typedef struct s_game
 {
 	mlx_t		*mlx;
@@ -62,9 +55,11 @@ typedef struct s_game
 	t_coord		player;
 	t_coord		exit;
 	char		**map;
+	char		**mapcopy;
 	int			width;
 	int			height;
-	t_count		element;
+	int			item_collected;
+	int			item_max;
 }	t_game;
 
 // Initialisation
@@ -75,6 +70,8 @@ char    **pars_tacus(char *mapfile);
 void    load_xpm(t_game *game);
 void    texture_to_img(t_game *game);
 void	render_window(t_game *game);
+int 	get_coordinate(t_game *game, char element);
+int 	get_collectible_num(t_game *game);
 
 // Keyhook
 void    keyhook(mlx_key_data_t keydata, void *param);
@@ -88,5 +85,9 @@ int check_element(char **map);
 int	check_element_number(t_game *game);
 int is_map_width(t_game *game);
 int is_map_height(t_game *game);
+int verify_path(t_game *game, int row, int col);
+
+//Utils
+char **copymap(char **map);
 
 #endif

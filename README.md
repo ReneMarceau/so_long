@@ -2,7 +2,7 @@
 
 ## MLX42
 
-- [ ] Se familiariser avec les fonctions de la mlx 
+- [x] Se familiariser avec les fonctions de la mlx 
 
 ## Base de game
 
