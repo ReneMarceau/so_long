@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:35:53 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/11 17:16:27 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:25:59 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define ERROR_H
 
 # define ERROR_ARGS         "Error\nInvalid number of arguments (must be 1)"
-# define ERROR_FILE         "Error\nMap file not found or invalid file extension (must be .ber)"
+# define ERROR_FILE         "Error\nMap file not found"
+# define ERROR_EXT          "Error\nMap invalid file extension (must be .ber)"
 # define ERROR_PARSING      "Error\nMap parsing failed"
 # define ERROR_ELEMENT      "Error\nElement in map is invalid"
 # define ERROR_ELEMENT_NUM  "Error\nThe map must have exactly 1 player, 1 exit and at least 1 collectible"
