@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/12 18:22:48 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:44:02 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ int 	get_collectible_num(t_game *game);
 
 // Keyhook
 void    keyhook(mlx_key_data_t keydata, void *param);
+void	movements(t_game *game);
+void    move_left(t_game *game);
+void    move_right(t_game *game);
+void	move_down(t_game *game);
+void	move_up(t_game *game);
 
 // Free
 int	    end_success(t_game *game);
@@ -86,6 +91,7 @@ int	check_element_number(t_game *game);
 int is_map_width(t_game *game);
 int is_map_height(t_game *game);
 int verify_path(t_game *game, int row, int col);
+int verify_ext(char *argv);
 
 //Utils
 char **copymap(char **map);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:19:46 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/12 18:21:45 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:42:25 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,16 @@ int is_map_height(t_game *game)
     if (left_height != right_height)
         return (0);
     return (1);
+}
+
+int    verify_ext(char *argv)
+{
+    int i;
+    i = 0;
+    while (argv[i])
+        i++;
+        
+    if (argv[i - 1] == 'r' && argv[i - 2] == 'e' && argv[i - 3] == 'b' && argv[i - 4] == '.')
+        return (1);
+    return (0);
 }

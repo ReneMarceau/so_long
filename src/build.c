@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   build.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:11:52 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/13 13:09:35 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/13 16:36:26 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,12 @@ void	build(t_game *game, char **argv)
 		end_failure(game, ERROR_ITEM);
 	if (!verify_path(game, game->player.y, game->player.x))
 		end_failure(game, ERROR_PATH);
-	game->mlx = mlx_init(game->width * IMG_SIZE, game->height * IMG_SIZE, "René le bg", false);
+	game->mlx = mlx_init(game->width * IMG_SIZE, game->height * IMG_SIZE, "Kam la bg", false);
 	if (!game->mlx)
 		end_failure(game, ERROR_MLX);
+	if (!verify_ext(argv[1]))
+		end_failure(game, ERROR_FILE);
+		
 	load_xpm(game);
 	texture_to_img(game);
 	render_window(game);
