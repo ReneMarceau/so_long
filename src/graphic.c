@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graphic.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:42:05 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/14 14:52:48 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/19 18:56:34 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,4 @@ void	render_window(t_game *game)
 	mlx_image_to_window(game->mlx, game->img[EXIT_CLOSE], game->exit.width, game->exit.height);
 	mlx_image_to_window(game->mlx, game->img[FLOOR], game->player.width, game->player.height);
 	mlx_image_to_window(game->mlx, game->img[PLAYER], game->player.width, game->player.height);
-	mlx_set_instance_depth(&game->img[ITEM]->instances[0], 100);
-	
 }

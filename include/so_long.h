@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/17 14:44:02 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/19 18:35:46 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ typedef struct s_game
 	t_coord		player;
 	t_coord		exit;
 	char		**map;
-	char		**mapcopy;
 	int			width;
 	int			height;
 	int			item_collected;
 	int			item_max;
+	int			collpath;
 }	t_game;
 
 // Initialisation
@@ -82,6 +82,7 @@ void	move_down(t_game *game);
 void	move_up(t_game *game);
 
 // Free
+void	free_map(char **map);
 int	    end_success(t_game *game);
 void	end_failure(t_game *game, char *error_message);
 
@@ -90,7 +91,7 @@ int check_element(char **map);
 int	check_element_number(t_game *game);
 int is_map_width(t_game *game);
 int is_map_height(t_game *game);
-int verify_path(t_game *game, int row, int col);
+int	verify_map(t_game *game);
 int verify_ext(char *argv);
 
 //Utils

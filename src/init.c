@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:19:46 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/13 16:42:25 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/19 18:31:46 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	init(t_game *game)
     game->height = 0;
     game->item_collected = 0;
     game->item_max = 0;
+    game->collpath = 0;
 }
 
 int get_collectible_num(t_game *game)
