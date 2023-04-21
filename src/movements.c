@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:11:02 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/21 16:45:40 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/21 17:20:58 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,35 +36,47 @@ void	movements(t_game *game)
 // Handles left movement
 void	move_left(t_game *game)
 {
-	game->img[PLAYER]->instances[game->item_collected].x -= IMG_SIZE;
-	game->player.x--;
-	game->player.width -= IMG_SIZE;
-	movements (game);
+	if (game->map[game->player.y][game->player.x - 1] != '1')
+	{
+		game->img[PLAYER]->instances[game->item_collected].x -= IMG_SIZE;
+		game->player.x--;
+		game->player.width -= IMG_SIZE;
+		movements (game);
+	}
 }
 
 // Handles right movement
 void	move_right(t_game *game)
 {
-	game->img[PLAYER]->instances[game->item_collected].x += IMG_SIZE;
-	game->player.x++;
-	game->player.width += IMG_SIZE;
-	movements(game);
+	if (game->map[game->player.y][game->player.x + 1] != '1')
+	{
+		game->img[PLAYER]->instances[game->item_collected].x += IMG_SIZE;
+		game->player.x++;
+		game->player.width += IMG_SIZE;
+		movements(game);
+	}
 }
 
 // Handles down movement
 void	move_down(t_game *game)
 {
-	game->img[PLAYER]->instances[game->item_collected].y += IMG_SIZE;
-	game->player.y++;
-	game->player.height += IMG_SIZE;
-	movements(game);
+	if (game->map[game->player.y + 1][game->player.x] != '1')
+	{
+		game->img[PLAYER]->instances[game->item_collected].y += IMG_SIZE;
+		game->player.y++;
+		game->player.height += IMG_SIZE;
+		movements(game);
+	}
 }
 
 // Handles up movement
 void	move_up(t_game *game)
 {
-	game->img[PLAYER]->instances[game->item_collected].y -= IMG_SIZE;
-	game->player.y--;
-	game->player.height -= IMG_SIZE;
-	movements(game);
+	if (game->map[game->player.y - 1][game->player.x] != '1')
+	{
+		game->img[PLAYER]->instances[game->item_collected].y -= IMG_SIZE;
+		game->player.y--;
+		game->player.height -= IMG_SIZE;
+		movements(game);
+	}
 }

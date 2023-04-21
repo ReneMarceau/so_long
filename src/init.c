@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:19:46 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/21 16:43:51 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/21 17:28:41 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ int	get_coordinate(t_game *game, char element)
 		while (game->map[i][++j])
 		{
 			if (game->map[i][j] == element)
+            {
 				set_coordinate(game, element, i, j);
-			return (1);
+			    return (1);
+            }
 		}
 	}
 	return (0);
