@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:11:02 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/21 13:26:42 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 16:45:40 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,21 @@
 // Handles movement functionality
 void	movements(t_game *game)
 {
-	if ((game->map[game->player.y][game->player.x] == 'E') && (game->item_collected == game->item_max))
+	if ((game->map[game->player.y][game->player.x] == 'E')
+			&& (game->item_collected == game->item_max))
 		end_success(game);
 	else if (game->map[game->player.y][game->player.x] == 'C')
 	{
-		mlx_image_to_window(game->mlx, game->img[FLOOR], game->player.width, game->player.height);
-		mlx_image_to_window(game->mlx, game->img[PLAYER], game->player.width, game->player.height);
+		mlx_image_to_window(game->mlx, game->img[FLOOR], game->player.width,
+			game->player.height);
+		mlx_image_to_window(game->mlx, game->img[PLAYER], game->player.width,
+			game->player.height);
 		game->item_collected++;
 		game->map[game->player.y][game->player.x] = '0';
 		if (game->item_collected == game->item_max)
-			mlx_image_to_window(game->mlx, game->img[EXIT_OPEN], game->exit.width, game->exit.height);
+			mlx_image_to_window(game->mlx, game->img[EXIT_OPEN],
+				game->exit.width,
+				game->exit.height);
 	}	
 }
 

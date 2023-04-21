@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/21 12:43:07 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 16:51:01 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,37 +64,36 @@ typedef struct s_game
 }	t_game;
 
 // Initialisation
-void	init(t_game *game);
 void	build(t_game *game, char **argv);
-char    **pars_tacus(char *mapfile);
-void    load_xpm(t_game *game);
-void    texture_to_img(t_game *game);
+char	**pars_tacus(char *mapfile);
+void	load_xpm(t_game *game);
+void	texture_to_img(t_game *game);
 void	render_window(t_game *game);
-int 	get_coordinate(t_game *game, char element);
-int 	get_collectible_num(t_game *game);
+int		get_coordinate(t_game *game, char element);
+int		get_collectible_num(t_game *game);
 
 // Keyhook
-void    keyhook(mlx_key_data_t keydata, void *param);
+void	keyhook(mlx_key_data_t keydata, void *param);
 void	movements(t_game *game);
 void	move_up(t_game *game);
 void	move_down(t_game *game);
-void    move_right(t_game *game);
-void    move_left(t_game *game);
+void	move_right(t_game *game);
+void	move_left(t_game *game);
 
 // Free
 void	free_map(char **map);
-int	    end_success(t_game *game);
+int		end_success(t_game *game);
 void	end_failure(t_game *game, char *error_message);
 
 //Error
-int check_element(char **map);
-int is_map_width(t_game *game);
-int is_map_height(t_game *game);
-int verify_extension(char *argv);
-int	verify_map(t_game *game);
+int		check_element(char **map);
+int		is_map_width(t_game *game);
+int		is_map_height(t_game *game);
+int		verify_extension(char *argv);
+int		verify_map(t_game *game);
 
 //Utils
 int		count_line(char *mapfile);
-char 	**copymap(char **map);
+char	**copymap(char **map);
 
 #endif
