@@ -71,6 +71,8 @@
 
 #### Après avoir bosser
 
+- make fclean
+
 - git add .
 
 - git commit -m "René est trop stylé"
@@ -84,7 +86,6 @@
 - git pull
 
 - git branch -D "NomDeLaBranch"
-
 ### Leaks
 
 Pour check les leaks `leaks --atExit -- ./so_long maps/basic.ber`

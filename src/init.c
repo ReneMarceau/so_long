@@ -6,22 +6,28 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 17:19:46 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/19 18:31:46 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:24:18 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+// Initialize the game struct
 void	init(t_game *game)
 {
     game->mlx = NULL;
     game->width = 0;
     game->height = 0;
+    game->current.x = -1;
+    game->current.y = -1;
+    game->current.width = 0;
+    game->current.height = 0;
     game->item_collected = 0;
     game->item_max = 0;
     game->collpath = 0;
 }
 
+// Gets the number of collectibles in the map
 int get_collectible_num(t_game *game)
 {
     int i;
@@ -42,36 +48,33 @@ int get_collectible_num(t_game *game)
     return (1);
 }
 
+// Gets the coordinates of the player and the exit
 int get_coordinate(t_game *game, char element)
 {
     int i;
-    int j;
 
     i = -1;
     while (game->map[++i])
     {
-        j = -1;
-        while (game->map[i][++j])
+        if (ft_strchr(game->map[i], element))
         {
-            if (game->map[i][j] == element)
+            if (element == 'P')
             {
-                if (element == 'P')
-                {
-                    game->player.x = j;
-                    game->player.y = i;
-                }
-                else if (element == 'E')
-                {
-                    game->exit.x = j;
-                    game->exit.y = i;
-                }
-                return (1);
+                game->player.x = ft_strchr(game->map[i], element) - game->map[i];
+                game->player.y = i;
             }
+            else if (element == 'E')
+            {
+                game->exit.x = ft_strchr(game->map[i], element) - game->map[i];
+                game->exit.y = i;
+            }
+            return (1);
         }
     }
     return (0);
 }
 
+// Calculates the width of the map
 int is_map_width(t_game *game)
 {
     int top_width;
@@ -95,6 +98,7 @@ int is_map_width(t_game *game)
     return (1);
 }
 
+// Calculates the height of the map
 int is_map_height(t_game *game)
 {
     int left_height;
@@ -115,16 +119,4 @@ int is_map_height(t_game *game)
     if (left_height != right_height)
         return (0);
     return (1);
-}
-
-int    verify_ext(char *argv)
-{
-    int i;
-    i = 0;
-    while (argv[i])
-        i++;
-        
-    if (argv[i - 1] == 'r' && argv[i - 2] == 'e' && argv[i - 3] == 'b' && argv[i - 4] == '.')
-        return (1);
-    return (0);
 }

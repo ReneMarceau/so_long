@@ -6,12 +6,13 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 15:42:05 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/19 18:56:34 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:21:54 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+// Loads xpm files
 void    load_xpm(t_game *game)
 {
     game->xpm[PLAYER] = mlx_load_xpm42(PLAYER_PATH);
@@ -29,6 +30,7 @@ void    load_xpm(t_game *game)
 			end_failure(game, ERROR_XPM);
 }
 
+// Converts xpm files to images
 void    texture_to_img(t_game *game)
 {
 	game->img[PLAYER] = mlx_texture_to_image(game->mlx, &game->xpm[PLAYER]->texture);
@@ -46,40 +48,40 @@ void    texture_to_img(t_game *game)
 			end_failure(game, ERROR_IMG);
 }
 
+// Renders each element of the map
+static void render_element(t_game *game)
+{
+	if (game->map[game->current.y][game->current.x] == 'P')
+	{
+		game->player.width = game->current.width;
+		game->player.height = game->current.height;
+	}
+	else if (game->map[game->current.y][game->current.x] == 'C')
+		mlx_image_to_window(game->mlx, game->img[ITEM], game->current.width, game->current.height);
+	else if (game->map[game->current.y][game->current.x] == '1')
+		mlx_image_to_window(game->mlx, game->img[WALL], game->current.width, game->current.height);
+	else if (game->map[game->current.y][game->current.x] == '0')
+		mlx_image_to_window(game->mlx, game->img[FLOOR], game->current.width, game->current.height);
+	else if (game->map[game->current.y][game->current.x] == 'E')
+	{
+		game->exit.width = game->current.width;
+		game->exit.height = game->current.height;
+	}
+}
+
+// Renders the map to the window
 void	render_window(t_game *game)
 {
-	int	x;
-	int	y;
-	int	width;
-	int	height;
-	
-	height = 0;
-	y = -1;
-	while (game->map[++y])
+	while (game->map[++game->current.y])
 	{
-		width = 0;
-		x = -1;
-		while (game->map[y][++x])
+		game->current.width = 0;
+		game->current.x = -1;
+		while (game->map[game->current.y][++game->current.x])
 		{
-			if (game->map[y][x] == 'P')
-			{
-				game->player.width = width;
-				game->player.height = height;
-			}
-			else if (game->map[y][x] == 'C')
-				mlx_image_to_window(game->mlx, game->img[ITEM], width, height);
-			else if (game->map[y][x] == '1')
-				mlx_image_to_window(game->mlx, game->img[WALL], width, height);
-			else if (game->map[y][x] == '0')
-				mlx_image_to_window(game->mlx, game->img[FLOOR], width, height);
-			else if (game->map[y][x] == 'E')
-			{
-				game->exit.width = width;
-				game->exit.height = height;
-			}
-			width += IMG_SIZE;
+			render_element(game);
+			game->current.width += IMG_SIZE;
 		}
-		height += IMG_SIZE;
+		game->current.height += IMG_SIZE;
 	}
 	mlx_image_to_window(game->mlx, game->img[EXIT_CLOSE], game->exit.width, game->exit.height);
 	mlx_image_to_window(game->mlx, game->img[FLOOR], game->player.width, game->player.height);

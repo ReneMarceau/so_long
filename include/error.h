@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:35:53 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/13 16:25:59 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/21 12:23:06 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 
 # define ERROR_ARGS         "Error\nInvalid number of arguments (must be 1)"
 # define ERROR_FILE         "Error\nMap file not found"
-# define ERROR_EXT          "Error\nMap invalid file extension (must be .ber)"
+# define ERROR_EXTENSION    "Error\nMap invalid file extension (must be .ber)"
 # define ERROR_PARSING      "Error\nMap parsing failed"
 # define ERROR_ELEMENT      "Error\nElement in map is invalid"
-# define ERROR_ELEMENT_NUM  "Error\nThe map must have exactly 1 player, 1 exit and at least 1 collectible"
 # define ERROR_PLAYER 		"Error\nMap must have exactly 1 player"
 # define ERROR_EXIT 		"Error\nMap must have exactly 1 exit"
 # define ERROR_ITEM 		"Error\nMap must have at least 1 collectible"
-# define ERROR_MAP_CLOSED   "Error\nMap is not closed"
 # define ERROR_RECTANGLE 	"Error\nMap is not a rectangle or is not surrounded by walls"
 # define ERROR_NEWLINE 		"Error\nMap must not be empty or have empty lines"
 # define ERROR_PATH 		"Error\nNo valid path to finish the game"

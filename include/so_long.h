@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/19 18:35:46 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:43:07 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_game
 	mlx_image_t	*img[IMG_COUNTER];
 	t_coord		player;
 	t_coord		exit;
+	t_coord		current;
 	char		**map;
 	int			width;
 	int			height;
@@ -65,7 +66,6 @@ typedef struct s_game
 // Initialisation
 void	init(t_game *game);
 void	build(t_game *game, char **argv);
-int 	count_line(char *mapfile);
 char    **pars_tacus(char *mapfile);
 void    load_xpm(t_game *game);
 void    texture_to_img(t_game *game);
@@ -76,10 +76,10 @@ int 	get_collectible_num(t_game *game);
 // Keyhook
 void    keyhook(mlx_key_data_t keydata, void *param);
 void	movements(t_game *game);
-void    move_left(t_game *game);
-void    move_right(t_game *game);
-void	move_down(t_game *game);
 void	move_up(t_game *game);
+void	move_down(t_game *game);
+void    move_right(t_game *game);
+void    move_left(t_game *game);
 
 // Free
 void	free_map(char **map);
@@ -88,13 +88,13 @@ void	end_failure(t_game *game, char *error_message);
 
 //Error
 int check_element(char **map);
-int	check_element_number(t_game *game);
 int is_map_width(t_game *game);
 int is_map_height(t_game *game);
+int verify_extension(char *argv);
 int	verify_map(t_game *game);
-int verify_ext(char *argv);
 
 //Utils
-char **copymap(char **map);
+int		count_line(char *mapfile);
+char 	**copymap(char **map);
 
 #endif
