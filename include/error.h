@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:35:53 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/21 16:52:10 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/21 17:32:19 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define ERROR_PLAYER		"Error\nMap must have exactly 1 player"
 # define ERROR_EXIT			"Error\nMap must have exactly 1 exit"
 # define ERROR_ITEM			"Error\nMap must have at least 1 collectible"
-# define ERROR_RECTANGLE	"Error\nMap is not a rectangle"
+# define ERROR_RECTANGLE	"Error\nMap is not a rectangle or closed"
 # define ERROR_NEWLINE		"Error\nMap must not be empty or have empty lines"
 # define ERROR_PATH			"Error\nNo valid path to finish the game"
 # define ERROR_XPM			"Error\nXPM load failed"
