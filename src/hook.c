@@ -6,12 +6,13 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:14:57 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/19 18:56:07 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:22:13 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+// Keyhook function to handle the keypresses
 void	keyhook(mlx_key_data_t keydata, void *param)
 {
 	t_game	*game;

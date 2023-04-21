@@ -6,12 +6,25 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 11:48:36 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/19 18:56:54 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:18:51 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+// Checks if the mapfile has the correct extension (.ber)
+int    verify_extension(char *argv)
+{
+    int i;
+    i = 0;
+    while (argv[i])
+        i++;
+    if (argv[i - 1] == 'r' && argv[i - 2] == 'e' && argv[i - 3] == 'b' && argv[i - 4] == '.')
+        return (1);
+    return (0);
+}
+
+// Checks if the map has only right elements inside it
 int check_element(char **map)
 {
     int i;
@@ -35,6 +48,7 @@ int check_element(char **map)
     return (1);
 }
 
+// Try to find a possible path from the player to the exit
 static void	verify_path(t_game *game, char **map, int row, int col)
 {
 	if ((row >= 0 && row < game->height) && (col >= 0 && col < game->width))
@@ -56,6 +70,7 @@ static void	verify_path(t_game *game, char **map, int row, int col)
 	return ;
 }
 
+// Verifies if there is a valid path
 int	verify_map(t_game *game)
 {
 	static char **map;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+         #
+#    By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/17 16:24:41 by rmarceau          #+#    #+#              #
-#    Updated: 2023/04/17 14:10:56 by klaksi           ###   ########.fr        #
+#    Updated: 2023/04/21 12:27:07 by rmarceau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,11 @@ INC_DIR = include
 SRCS_DIR = src
 OBJS_DIR = objs
 
-SRCS = so_long.c parsing.c build.c graphic.c hook.c free.c init.c error.c utils.c movements.c
+SRCS = 	so_long.c init.c build.c parsing.c	\
+		graphic.c							\
+		hook.c movements.c					\
+		utils.c								\
+		error.c free.c						\
 
 OBJS = $(addprefix ${OBJS_DIR}/, ${SRCS:%.c=%.o})
 

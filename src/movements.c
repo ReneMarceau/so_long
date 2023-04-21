@@ -6,12 +6,13 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:11:02 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/19 18:42:49 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:26:42 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
+// Handles movement functionality
 void	movements(t_game *game)
 {
 	if ((game->map[game->player.y][game->player.x] == 'E') && (game->item_collected == game->item_max))
@@ -27,6 +28,7 @@ void	movements(t_game *game)
 	}	
 }
 
+// Handles left movement
 void	move_left(t_game *game)
 {
 	game->img[PLAYER]->instances[game->item_collected].x -= IMG_SIZE;
@@ -35,6 +37,7 @@ void	move_left(t_game *game)
 	movements (game);
 }
 
+// Handles right movement
 void	move_right(t_game *game)
 {
 	game->img[PLAYER]->instances[game->item_collected].x += IMG_SIZE;
@@ -43,6 +46,7 @@ void	move_right(t_game *game)
 	movements(game);
 }
 
+// Handles down movement
 void	move_down(t_game *game)
 {
 	game->img[PLAYER]->instances[game->item_collected].y += IMG_SIZE;
@@ -51,6 +55,7 @@ void	move_down(t_game *game)
 	movements(game);
 }
 
+// Handles up movement
 void	move_up(t_game *game)
 {
 	game->img[PLAYER]->instances[game->item_collected].y -= IMG_SIZE;
