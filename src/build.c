@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   build.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:11:52 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/22 12:13:27 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:46:02 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	init(t_game *game)
 	game->item_collected = 0;
 	game->item_max = 0;
 	game->collpath = 0;
+	game->print_move = 0;
 }
 
 // Verifies if the map is valid

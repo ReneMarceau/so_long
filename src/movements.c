@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:11:02 by klaksi            #+#    #+#             */
-/*   Updated: 2023/04/21 17:20:58 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:57:50 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 // Handles movement functionality
 void	movements(t_game *game)
 {
+	ft_printf("Movement %d\n",++game->print_move);
 	if ((game->map[game->player.y][game->player.x] == 'E')
 			&& (game->item_collected == game->item_max))
-		end_success(game);
+	{
+		ft_printf("\033[0;95mCONGRATULATIONS!! YOU DID IT IN %d MOVEMENTS\n",++game->print_move);
+			end_success(game);
+	}
 	else if (game->map[game->player.y][game->player.x] == 'C')
 	{
 		mlx_image_to_window(game->mlx, game->img[FLOOR], game->player.width,
@@ -30,7 +34,7 @@ void	movements(t_game *game)
 			mlx_image_to_window(game->mlx, game->img[EXIT_OPEN],
 				game->exit.width,
 				game->exit.height);
-	}	
+	}
 }
 
 // Handles left movement
