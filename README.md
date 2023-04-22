@@ -17,10 +17,10 @@
 
 ## XPM
 
-- [ ] Télecharger les sprites en PNG ***<sup>klaksi</sup>***
-- [ ] Redimensionner les PNG à la bonne dimension
-- [ ] Convertir PNG en `XPM`
-- [ ] Convertir XPM en `XPM42`
+- [x] Télecharger les sprites en PNG ***<sup>klaksi</sup>***
+- [x] Redimensionner les PNG à la bonne dimension
+- [x] Convertir PNG en `XPM`
+- [x] Convertir XPM en `XPM42`
 - [x] Load tous les différents XPM avec `mlx_load_xpm42`
 - [x] Changer toutes les textures(XPM) en images avec `mlx_texture_to_image`
 
@@ -28,13 +28,13 @@
 
 - [x] Écrire les différents messages d'érreurs
 - [x] Nombre d'arguments `argc`
-- [ ] Vérifier si le fichier existe et l'extention du fichier est bonne `.ber`
+- [x] Vérifier si le fichier existe et l'extention du fichier est bonne `.ber`
 - [x] Map est rectangulaire
 - [x] La map est entourée uniquement de murs
 - [x] Vérifier que tous les espaces vides sont remplie de `0`
 - [x] Tous les caractères sont correctes
 - [x] Vérifier qu'il y a au moins 1 collectible et uniquement 1 joueur et 1 sortie
-- [ ] Checker si il y a un chemin valide (il est possible de terminer la carte)
+- [x] Checker si il y a un chemin valide (il est possible de terminer la carte)
 
 ## Render
 
@@ -45,7 +45,7 @@
 
 - [x] Implementer les fonctions nécessaire pour les hooks des différents touches `mlx_key_hook()`
 - [x] Permettre le personnage à bouger ou pas en fonctions des obstacles autour de lui (Chaque mouvements doient être compter)
-- [ ] Ouvrir la porte après que tous les collectibles ont été collecter
+- [x] Ouvrir la porte après que tous les collectibles ont été collecter
 
 ## Fonction d'exit
 
