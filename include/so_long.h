@@ -6,7 +6,7 @@
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:49:17 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/21 16:51:01 by klaksi           ###   ########.fr       */
+/*   Updated: 2023/04/22 12:40:11 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_game
 	int			item_collected;
 	int			item_max;
 	int			collpath;
+	int			print_move;
 }	t_game;
 
 // Initialisation
