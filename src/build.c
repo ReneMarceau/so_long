@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:11:52 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/21 17:23:58 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:13:27 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static void	verify_all(t_game *game)
 		end_failure(game, ERROR_NEWLINE);
 	if (!is_map_width(game) || !is_map_height(game))
 		end_failure(game, ERROR_RECTANGLE);
+	if (game->width > 40 || game->height > 20)
+		end_failure(game, ERROR_MAPSIZE);
 	if (!check_element(game->map))
 		end_failure(game, ERROR_ELEMENT);
 	if (!get_coordinate(game, 'P'))

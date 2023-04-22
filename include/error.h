@@ -6,7 +6,7 @@
 /*   By: rmarceau <rmarceau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 14:35:53 by rmarceau          #+#    #+#             */
-/*   Updated: 2023/04/21 17:32:19 by rmarceau         ###   ########.fr       */
+/*   Updated: 2023/04/22 12:11:28 by rmarceau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define ERROR_FILE			"Error\nMap file not found"
 # define ERROR_EXTENSION	"Error\nMap invalid file extension (must be .ber)"
 # define ERROR_PARSING		"Error\nMap parsing failed"
+# define ERROR_MAPSIZE		"Error\nMap size is too big (max 40x20)"
 # define ERROR_ELEMENT		"Error\nElement in map is invalid"
 # define ERROR_PLAYER		"Error\nMap must have exactly 1 player"
 # define ERROR_EXIT			"Error\nMap must have exactly 1 exit"
